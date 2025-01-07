@@ -39,7 +39,7 @@ Gaia分为服务端渲染和客户端渲染两部分。
    color: rgba,
    zIndex: int
    )
-  geometryFactory.addPath(
+   geometryFactory.addPath(
    id: string,
    fromX: double,
    fromY: double,
@@ -50,7 +50,7 @@ Gaia分为服务端渲染和客户端渲染两部分。
    color: rgba,
    zIndex: int
    )
-  geometryFactory.addText(
+   geometryFactory.addText(
    id: string,
    content: string,
    x: double,
@@ -59,7 +59,7 @@ Gaia分为服务端渲染和客户端渲染两部分。
    fontSize: int,
    zIndex: int
    )
-  geometryFactory.addImage(
+   geometryFactory.addImage(
    id: string,
    x: double,
    y: double,
@@ -68,7 +68,7 @@ Gaia分为服务端渲染和客户端渲染两部分。
    imageBase64: string,
    zIndex: int
    )
-  geometryFactory.addSvg(
+   geometryFactory.addSvg(
    id: string,
    x: double,
    y: double,
@@ -80,6 +80,7 @@ Gaia分为服务端渲染和客户端渲染两部分。
 ### 单核或多核渲染
    geometryMgr->renderWithSingleCore(level, indexList);
    geometryMgr->renderWithMultiCore(level, indexList);
+   
    level: int (图像层级参数，level越大，图像越细节)
    indexList: std::vector<int> (所需渲染瓦片索引值)
    单核或多核渲染方法返回瓦片图Base64格式字符串与瓦片宽高信息。
