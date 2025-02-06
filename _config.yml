@@ -18,21 +18,25 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: Gaia release
+# email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Gaia是一个高性能的几何渲染引擎,分为服务端渲染和客户端渲染两部分。
+  服务端渲染引擎负责快速的图形渲染;
+  客户端渲染引擎负责图形的拼接处理操作,提供高效、灵活的渲染能力。
 baseurl: "/gaia-release" # the subpath of your site, e.g. /blog
 url: "https://raina-rise.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  gaia
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# plugins:
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
