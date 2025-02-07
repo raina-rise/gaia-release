@@ -1,0 +1,23 @@
+site_name: raina-gaia
+site_url: https://raina-rise.github.io/gaia-release
+
+# 站点的基本配置
+site_description: Documentation for Gaia Project
+
+# 主题配置
+theme: readthedocs
+
+docs_dir: docs
+
+# 配置导航栏
+nav:
+  # - Home: index.md
+  - Overview: server/overview.md
+  - Quick Start: server/quick_start.md
+  - API Reference: server/api_reference.md
+
+# Markdown 配置
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc
