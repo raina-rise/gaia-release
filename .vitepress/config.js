@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   title: 'raina-gaia',  
+  base: '/gaia-release',
   description: '大规模图形渲染工具', 
   srcDir: './docs',
   themeConfig: {
