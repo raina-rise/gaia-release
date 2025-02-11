@@ -1,30 +1,29 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  title: 'raina-gaia',  
+  title: 'Raina Gaia',  
   base: '/gaia-release',
   description: '大规模图形渲染工具', 
   srcDir: './docs',
   themeConfig: {
     nav: [
-        { text: 'Overview', link: '/' },
-        { text: 'Server Docs', link: '/server/'},
-        { text: 'Client Docs', link: '/client/' },
+        { text: 'Home', link: '/' },
+        { text: 'Server Guide', link: '/server/'},
+        { text: 'Client Guide', link: '/client/' },
     ],
     sidebar: {
-        '/': [{ text: 'Overview', link: '/'}],
+        '/': [{ text: 'What is Raina Gaia?', link: '/'}],
         '/server/': [
-            {text: 'Quick Start', link: '/server/quick_start'},
-            {text: 'API Reference', link: '/server/api_reference'},
-            {text: 'Other Notes', link: '/server/other_notes'},
+            {text: 'Quick Start', link: '/server/quick-start'},
+            {text: 'API Reference', link: '/server/api-reference'},
+            {text: 'Other Notes', link: '/server/other-notes'},
             {text: 'About', link: '/server/about'},   
         ],
         '/client/':[
-
         ]
     },
     footer: {
-      message: 'raina-gaia release',
+      message: 'Raina Gaia Released.',
     },
   },
 

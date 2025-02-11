@@ -70,40 +70,36 @@ for (const auto &blockRes : result.blocksRes) {
 
 ```
 
-## 详细说明
+## API 详细说明
 
-### gaia 实例创建
+### Gaia 类
+
+- **方法**
 
 ```cpp
-GaiaMgr gaiaMgr; // gaia实例管理器
-Gaia &gaia = GaiaMgr::getGaiaInstance(gaiaId); // 创建gaia实例
-auto geometryMgr = gaia.getGeometryMgr(gaiaId); // 图元对象管理类
-GeometryFactory geometryFactory = gaia.getGeometryFactory(gaiaId); // 用于收集图元对象
+// gaia实例创建与销毁API
+Gaia &getInstance(int id);
+void destroyInstance(int id);
+
+// 收集渲染对象API
+void addRect(const std::string &id, double x, double y, int width, int height, bool keepWidth, double lineWidth, RectType rectType, Color color, int zIndex);
+void addPath(const std::string &id, double fromX, double fromY, double toX, double toY, bool keepWidth, double lineWidth, Color color, int zIndex);
+void addText(const std::string &id, const std::string &content, double x, double y, bool keepSize, double fontSize, int zIndex);
+void addImage(const std::string &id, double x, double y, int width, int height, const std::string &imageBase64, int zIndex);
+void addSvg(const std::string &id, double x, double y, int width, int height, const std::string &elementId, int zIndex);
+
+// 单核与多核渲染API，返回每个瓦片图 Base64 格式字符串与瓦片图宽高信息
+RenderResult renderWithSingleCore(int level, const std::vector<int> &indexList);  // 单核
+RenderResult renderWithMultiCore(int level, const std::vector<int> &indexList);   // 多核
+
+// 渲染结果API，直接生成png图片，该方法主要用于测试
+void render(const std::string &baseFileName);
 ```
 
-### 自定义图元渲染对象
+### Util 类
+
+- **方法**
 
 ```cpp
-geometryFactory.addRect(id: string, x: double, y: double, width: int, height: int, keepWidth: bool, lineWidth: double, rectType: STROKE | FILL, color: rgba, zIndex: int)
-geometryFactory.addPath(id: string, fromX: double, fromY: double, toX: double, toY: double, keepWidth: bool, lineWidth: double, color: rgba, zIndex: int)
-geometryFactory.addText(id: string, content: string, x: double, y: double, keepSize: bool, fontSize: int, zIndex: int)
-geometryFactory.addImage(id: string, x: double, y: double, width: int, height: int， imageBase64: string, zIndex: int)
-geometryFactory.addSvg(id: string, x: double, y: double, width: int, height: int，elementId: string, zIndex: int)
-```
-
-### 单核或多核渲染
-
-```cpp
-geometryMgr->renderWithSingleCore(level, indexList);
-geometryMgr->renderWithMultiCore(level, indexList);
-// level: int (图像层级参数，level越大，图像越细节)
-// indexList: std::vector<int> (所需渲染瓦片索引值)
-```
-
-- 单核或多核渲染方法返回每个瓦片图 Base64 格式字符串与瓦片图宽高信息。
-
-### 销毁 gaia 实例
-
-```cpp
-gaia.destoryGeometryMgr(gaiaId)
+int getSideNumberOnLevel(int level);
 ```
