@@ -19,6 +19,7 @@ export default defineConfig({
             sidebar: {
                 '/': [{ text: '什么是 Raina Gaia?', link: '/'}],
                 '/server/': [
+                    {text: '概述', link:'/server/'},
                     {text: '快速开始', link: '/server/quick-start'},
                     {text: 'API 说明文档', link: '/server/api-reference'},
                     {text: '其他说明', link: '/server/other-notes'},  
@@ -44,6 +45,7 @@ export default defineConfig({
             sidebar: {
                 '/en/': [{ text: 'What Raina Gaia?', link: '/en/'}],
                 '/en/server/': [
+                    {text: 'Overview', link:'/en/server/'},
                     {text: 'Quick Start', link: '/en/server/quick-start'},
                     {text: 'API Reference', link: '/en/server/api-reference'},
                     {text: 'Other Notes', link: '/en/server/other-notes'},  
