@@ -4,19 +4,19 @@ layout: home
 
 hero:
   name: "Raina Gaia"
-  text: "Server & Client"
-  tagline: A large-scale graphics rendering tool
+  text: "服务端 & 客户端"
+  tagline: 大规模图形渲染工具
   actions:
     - theme: brand
-      text: What is Raina Gaia?
+      text: 什么是 Raina Gaia?
       link: /raina-gaia
     - theme: alt
-      text: QuickStart
+      text: 快速开始
       link: /quick-start
 
 features:
-  - title: Server
-    details: Server-side graphics rendering engine
-  - title: Client
-    details: Client-side ...
+  - title: 服务端
+    details: 服务端图形渲染引擎
+  - title: 客户端
+    details: ...
 ---
