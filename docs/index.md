@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: 快速开始
       link: /quick-start
+    - theme: alt
+      text: GitHub
+      link: "https://github.com/raina-rise/gaia-release"
 
 features:
   - title: 服务端
