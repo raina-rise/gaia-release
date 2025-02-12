@@ -5,7 +5,18 @@
 ### 步骤
 
 1. 下载元件库的 svg 文件
-2. 将元件库 svg 文件导入本地项目
+2. 将元件库 svg 文件导入本地项目，目录结构为：
+
+```
+/path/to/project
+├── include/
+│ ├── Gaia.h
+│ └── ...
+└── lib/
+   └── libgaia-server.a
+└── symbol.svg
+```
+
 3. 设置 svg 文件路径:
 
 ```cpp
