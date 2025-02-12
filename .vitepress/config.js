@@ -17,10 +17,15 @@ export default defineConfig({
                 { text: '客户端指南', link: '/client/' },
             ],
             sidebar: {
-                '/': [{ text: '什么是 Raina Gaia?', link: '/'}],
+                '/': [
+                    { text: '什么是 Raina Gaia?', link: '/raina-gaia'},
+                    { text: '快速开始', link: '/quick-start'}
+                ],
                 '/server/': [
                     {text: '概述', link:'/server/'},
                     {text: '快速开始', link: '/server/quick-start'},
+                    {text: '解决的问题', link: '/server/solve-problem'},
+                    {text: '使用场景', link: '/server/usage-scenarios'},
                     {text: 'API 说明文档', link: '/server/api-reference'},
                     {text: '其他说明', link: '/server/other-notes'},  
                 ],

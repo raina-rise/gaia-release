@@ -1,6 +1,8 @@
 # 快速开始
 
-## 1. 下载 Gaia 安装包
+## Gaia-server
+
+### 1. 下载 Gaia 安装包
 
 - 访问 release 页面，下载 `gaia-release.tar.gz` 压缩包<br>
   [下载链接](https://github.com/raina-rise/gaia-release/releases)
@@ -17,7 +19,7 @@
    └── libgaia-server.a
 ```
 
-## 2. 安装依赖包
+### 2. 安装依赖包
 
 `Gaia`依赖于以下第三方库，请确保系统中已安装这些依赖：
 
@@ -30,7 +32,7 @@
 yum install cairo cairo-devel librsvg2 librsvg2-devel
 ```
 
-## 3. 集成 Gaia 到项目中
+### 3. 集成 Gaia 到项目中
 
 将`Gaia`的静态库和头文件集成到项目中，并在编译时链接到相关库<br>
 **示例：使用 CMake 集成**
@@ -45,3 +47,5 @@ link_directories(/path/to/project/lib)
 # 链接 Gaia 静态库和依赖库
 target_link_libraries(target_name gaia-server cairo librsvg-2.0)
 ```
+
+## Gaia-client
