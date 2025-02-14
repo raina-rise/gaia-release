@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as n}from"./chunks/framework.Dx5c5edu.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"en/guide/index.md","filePath":"en/guide/index.md"}'),a={name:"en/guide/index.md"};function r(d,i,o,s,c,p){return n(),t("div")}const f=e(a,[["render",r]]);export{m as __pageData,f as default};

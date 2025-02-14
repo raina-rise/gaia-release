@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a}from"./chunks/framework.Dx5c5edu.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"en/guide/quick-start.md","filePath":"en/guide/quick-start.md"}'),r={name:"en/guide/quick-start.md"};function c(s,n,i,o,d,p){return a(),e("div")}const m=t(r,[["render",c]]);export{_ as __pageData,m as default};
