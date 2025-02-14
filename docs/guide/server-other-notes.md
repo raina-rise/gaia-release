@@ -5,6 +5,7 @@
 ### 步骤
 
 1. 下载元件库的 svg 文件
+   [symbol-library.svg](../resources/symbol-library.svg)
 2. 将元件库 svg 文件导入本地项目，目录结构为：
 
 ```
@@ -26,6 +27,8 @@ GSvg::svgPath = "/path/to/symbol.svg"
 4. 使用 addSvg 方法渲染所需元件
 
 元件库信息如下：
-![Symbol Library](../images/symbol-library.svg)
+![Symbol Library](../resources/symbol-library.svg)
 
-**注：用户可根据需求引入 SVG 文件进行渲染**
+:::info 说明
+用户可根据需求自行引入 SVG 文件进行渲染
+:::

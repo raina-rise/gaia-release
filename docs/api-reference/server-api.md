@@ -1,6 +1,6 @@
 # API 使用说明
 
-## 调用示例
+<!-- ## 调用示例
 
 ```cpp
 #include "Gaia.h"
@@ -71,13 +71,11 @@ for (const auto &blockRes : result.blocksRes) {
    imagesData.push_back({{"index", index}, {"blockBase64Str",base64Str}});
 }
 
-```
+``` -->
 
-## API 详细说明
+## Gaia 类
 
-### Gaia 类
-
-#### 1. gaia 实例创建与销毁方法
+### 1. gaia 实例创建与销毁方法
 
 ```cpp
 1. 方法
@@ -88,7 +86,7 @@ int gaiaId = 1;
 Gaia &gaia = Gaia::getInstance(gaiaId);
 ```
 
-#### 2. 创建渲染对象方法
+### 2. 创建渲染对象方法
 
 - **矩形（rect）**
 
@@ -202,7 +200,7 @@ gaia.addSvg('svg1', 30, 25, 100, 100, 'AND2');
 | **elementId** | `std::string` | 必选，svg 图片中具体某个元素的 id。                          |
 | **zIndex**    | `int`         | 可选，图片的渲染层级。数值越大，图片越靠上显示。 默认值为 0. |
 
-#### 3. 渲染方法
+### 3. 渲染方法
 
 - **单核渲染方法**
 
@@ -245,9 +243,9 @@ struct RenderResult{
 | **blockWidth**   | `double`                     | 每个 Block 的宽度                                                                                                                                                                                                                                  |
 | **blockHeight**  | `double`                     | 每个 Block 的高度                                                                                                                                                                                                                                  |
 
-### Util 类
+## Util 类
 
-#### 1. 获取瓦片图数量方法
+### 1. 获取瓦片图数量方法
 
 ```cpp
 int getSideNumberOnLevel(int level);
