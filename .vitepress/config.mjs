@@ -6,6 +6,15 @@ export default defineConfig({
   description: '大规模图形渲染工具',
   srcDir: './docs',
 
+  head:[
+    'script',
+    {
+        defer: true,
+        'data-website-id':'24f5eed9-7f4b-42e4-a1d2-8d3247e67163',
+        src: 'https://cloud.umami.is/script.js'
+    }
+  ],
+
   locales: {
     root: {
         label: '简体中文',
