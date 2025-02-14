@@ -11,12 +11,14 @@ export default defineConfig({
         label: '简体中文',
         lang: 'zh',
         head:[
-            'script',
-            {
-                defer: true,
-                'data-website-id': '24f5eed9-7f4b-42e4-a1d2-8d3247e67163',
-                src: 'https://cloud.umami.is/script.js'
-            }
+            [
+                'script',
+                {
+                    defer: true,
+                    'data-website-id': '24f5eed9-7f4b-42e4-a1d2-8d3247e67163',
+                    src: 'https://cloud.umami.is/script.js'
+                }
+            ]
         ],
         themeConfig: {
             nav: [
@@ -74,12 +76,14 @@ export default defineConfig({
         lang: 'en',
         link: '/en/',
         head:[
-            'script',
-            {
-                defer: true,
-                'data-website-id': '24f5eed9-7f4b-42e4-a1d2-8d3247e67163',
-                src: 'https://cloud.umami.is/script.js'
-            }
+            [
+                'script',
+                {
+                    defer: true,
+                    'data-website-id': '24f5eed9-7f4b-42e4-a1d2-8d3247e67163',
+                    src: 'https://cloud.umami.is/script.js'
+                }
+            ]
         ],
         themeConfig: {
             search :{
