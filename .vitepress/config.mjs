@@ -42,8 +42,8 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
-                            { text: '使用场景', link: '' },
-                            { text: '解决的问题', link: '' }
+                            { text: '使用场景', link: '/guide/client-usage-scenarios' },
+                            { text: '解决的问题', link: '/guide/client-solved-problem' }
                         ]
                     }
                 ],
@@ -54,7 +54,7 @@ export default defineConfig({
                         collapsed: false,
                         items: [
                             { text: '服务端API', link: '/api-reference/server-api' },
-                            { text: '客户端API', link: '' }
+                            { text: '客户端API', link: '/api-reference/client-api' }
                         ]
                     }
                 ]
@@ -71,8 +71,8 @@ export default defineConfig({
             },
             nav: [
                 { text: 'Home', link: '/en/' },
-                { text: 'Guide', link: '/en/guide/'},
-                { text: 'API Reference', link: '/en/api-reference/' },
+                { text: 'Guide', link: '/en/guide/what-is-rainagaia'},
+                { text: 'API Reference', link: '/en/api-reference/server-api' },
             ],
             sidebar: {
                 '/en/guide/': [
@@ -90,8 +90,8 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
-                            { text: 'Overview', link: '' },
-                            { text: 'Usage scenarios', link: ''}
+                            // { text: 'Overview', link: '' },
+                            // { text: 'Usage scenarios', link: ''}
                         ]
                     },
                     {
@@ -99,8 +99,8 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
-                            { text: 'Overview', link: '' },
-                            { text: 'Usage scenarios', link: '' },
+                            // { text: 'Overview', link: '' },
+                            // { text: 'Usage scenarios', link: '' },
                         ]
                     } 
                 ],
@@ -110,8 +110,8 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
-                            { text: 'Server API Reference', link: '' },
-                            { text: 'Client API Reference', link: '' },
+                            { text: 'Server API Reference', link: '/en/api-reference/server-api' },
+                            { text: 'Client API Reference', link: '/en/api-reference/client-api' },
                         ]
                     }
                 ]
