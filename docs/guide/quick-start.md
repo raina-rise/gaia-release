@@ -34,7 +34,8 @@ yum install cairo cairo-devel librsvg2 librsvg2-devel
 
 ### 3. 集成 Gaia-server 到项目中
 
-将`Gaia-server`的静态库和头文件集成到项目中，并在编译时链接到相关库<br>
+将`Gaia-server`的静态库和头文件集成到项目中，并在编译时链接到相关库。<br>
+
 **示例：使用 CMake 集成**
 
 ```cmake
@@ -51,7 +52,7 @@ target_link_libraries(target_name gaia-server cairo librsvg-2.0)
 ### 4. 使用示例
 
 ```cpp
-// 以下头文件来自gaia-server
+// 以下头文件来自 Gaia-server
 #include "include/Gaia.h"
 #include "include/Util.d"
 
@@ -73,9 +74,9 @@ int main(){
   gaia.addText('text1', 'Text information', 12, 25);
   // 添加image对象
   gaia.addImage('image1', 5, 10, 'iVBORw0KGgoAAAANSUhEUgA...');
-  // 添加svg对象
+  // 添加SVG对象
   gaia.addSvg('svg1', 30, 25, 100, 100, 'AND2');
-  // 若添加svg对象，需要引入svg文件的路径
+  // 若添加SVG对象，需要引入SVG文件的路径
   GSvg::svgPath = "/path/to/symbol.svg"
 
   // 调用渲染方法，返回瓦片图的base64字符串，需要通过客户端渲染引擎拼接后展示渲染结果

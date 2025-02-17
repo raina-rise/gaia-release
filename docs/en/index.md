@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: What is Raina Gaia?
-      link: /raina-gaia
+      link: /en/guide/what-is-rainagaia
     - theme: alt
       text: QuickStart
-      link: /quick-start
+      link: /en/guide/quick-start
     - theme: alt
       text: GitHub
       link: "https://github.com/raina-rise/gaia-release"

@@ -4,9 +4,9 @@
 
 ### 步骤
 
-1. 下载元件库的 svg 文件
+1. 下载元件库的 SVG 文件
    [symbol-library.svg](../resources/symbol-library.svg)
-2. 将元件库 svg 文件导入本地项目，目录结构为：
+2. 将元件库 SVG 文件导入本地项目，目录结构为：
 
 ```
 /path/to/project
@@ -18,7 +18,7 @@
 └── symbol.svg
 ```
 
-3. 设置 svg 文件路径:
+3. 设置 SVG 文件路径
 
 ```cpp
 GSvg::svgPath = "/path/to/symbol.svg"

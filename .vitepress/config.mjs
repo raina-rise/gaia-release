@@ -42,8 +42,8 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
-                            { text: '使用场景', link: '/guide/server-usage-scenarios' },
-                            { text: '解决的问题', link: '/guide/server-solved-problem'},
+                            { text: '使用场景', link: '/guide/server-use-cases' },
+                            { text: '解决的问题', link: '/guide/server-problem-solved'},
                             { text: '其他说明', link: '/guide/server-other-notes'}
                         ]
                     },
@@ -52,8 +52,8 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
-                            { text: '使用场景', link: '/guide/client-usage-scenarios' },
-                            { text: '解决的问题', link: '/guide/client-solved-problem' }
+                            { text: '使用场景', link: '/guide/client-use-cases' },
+                            { text: '解决的问题', link: '/guide/client-problem-solved' }
                         ]
                     }
                 ],
@@ -110,8 +110,9 @@ export default defineConfig({
                         collapsible: true,
                         collapsed: false,
                         items: [
-                            // { text: 'Overview', link: '' },
-                            // { text: 'Usage scenarios', link: ''}
+                            { text: 'Use Cases', link: '/en/guide/server-use-cases' },
+                            { text: 'Problem Solved', link: '/en/guide/server-problem-solved' },
+                            { text: 'Other Notes', link: '/en/guide/server-other-notes' }
                         ]
                     },
                     {
