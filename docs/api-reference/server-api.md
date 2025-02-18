@@ -257,3 +257,34 @@ int getSideNumberOnLevel(int level);
 - 当 level=1 时，返回 4
 - 当 level=2 时，返回 64
 - 当 level=3 时，返回 1024
+
+### 2. PNG 图片解析方法
+
+```cpp
+std::string parseToBase64(const unsigned char *pngData, size_t input_length);
+```
+
+**方法说明**<br>
+该方法用于将 PNG 图片解析为 base64 字符串格式。
+
+**参数说明**<br>
+
+- pngData: PNG 图片对应的字节数据
+- input_length: PNG 图片大小
+
+**示例**
+
+```cpp
+// 1. 打开 PNG 文件
+std::ifstream file("image.png", std::ios::binary);
+if (!file) {
+   std::cout << "Failed to open file!" << std::endl;
+}
+
+// 2. 读取文件内容到字节数组
+std::vector<unsigned char> pngData((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+file.close();
+
+// 3. 调用 parseToBase64 方法进行编码
+std::string base64Str = Util::parseToBase64(pngData.data(), pngData.size());
+```

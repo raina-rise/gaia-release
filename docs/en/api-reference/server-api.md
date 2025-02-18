@@ -257,3 +257,34 @@ This method is used to get the corresponding number of tiles based on the specif
 - When level=1, return 4
 - When level=2, return 64
 - When level=3, return 1024
+
+### 2. PNG Image Parsing Method
+
+```cpp
+std::string parseToBase64(const unsigned char *pngData, size_t input_length);
+```
+
+**Method Description**<br>
+This method is used to parse a PNG image into a base64 string format.
+
+**Parameter Description**<br>
+
+- pngData: the byte data corresponding to a PNG image
+- input_length: the size of PNG image
+
+**Example**
+
+```cpp
+// 1. Open PNG file.
+std::ifstream file("image.png", std::ios::binary);
+if (!file) {
+   std::cout << "Failed to open file!" << std::endl;
+}
+
+// 2. Read the file content into a byte array.
+std::vector<unsigned char> pngData((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+file.close();
+
+// 3. Call the parseToBase64 method to encode it.
+std::string base64Str = Util::parseToBase64(pngData.data(), pngData.size());
+```
