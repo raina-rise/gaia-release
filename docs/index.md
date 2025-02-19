@@ -1,9 +1,29 @@
-# 概述
+---
+# https://vitepress.dev/reference/default-theme-home-page
+layout: home
 
-`raina-gaia`是一款高性能大规模图形渲染工具，由服务端渲染引擎和客户端渲染引擎组成，提供高效、灵活的渲染能力。
+hero:
+  name: "Raina Gaia"
+  text: "大规模图形渲染工具"
+  tagline: 上亿图元渲染出图片只需十几秒
+  actions:
+    - theme: brand
+      text: 什么是 Raina Gaia?
+      link: /guide/what-is-rainagaia
+    - theme: alt
+      text: 快速开始
+      link: /guide/quick-start
+    - theme: alt
+      text: GitHub
+      link: "https://github.com/raina-rise/gaia-release"
 
-`raina-gaia`支持 `矩形(rect)`、`路径(path)`、`文本(text)`、`图片(image)`或`svg` 五种基础图元对象的渲染，支持单核渲染和多核渲染模式。
-
-`raina-gaia`需要用户提供渲染图元的数据信息，根据用户定义的`矩形(rect)`、`路径(path)`、`文本(text)`、`图片(image)`或`svg`属性信息，输出对应的渲染图，示例渲染图如下：
-
-![demo1](images/demo1.png)
+features:
+  - title: 极速渲染
+    details: 采用多核渲染模式，让图形渲染速度更快，即使处理复杂图形也能轻松应对。
+  - title: 超大规模
+    details: 支持增量更新和多层级渲染，动态调整细节，轻松应对亿级图形渲染。
+  - title: 自定义渲染
+    details: 支持多种图形元素，提供丰富的参数设置，自由调整渲染效果。
+  - title: 流畅的交互
+    details: 实时加载，让用户缩放、拖拽等操作更加顺滑，体验更流畅。
+---
