@@ -1,115 +1,6 @@
-# 快速开始
+# 快速入门
 
-## 服务端渲染引擎
-
-### 1. 下载 Gaia-server 安装包
-
-- 访问 release 页面，下载 `gaia-release.tar.gz` 压缩包<br>
-  [下载链接](https://github.com/raina-rise/gaia-release/releases)
-- 将文件解压，获取静态库文件`libgaia-server.a`和 include 文件夹<br>
-
-解压后的目录结构如下：
-
-```
-/path/to/project
-├── include/
-│ ├── Gaia.h
-│ └── ...
-└── lib/
-   └── libgaia-server.a
-```
-
-### 2. 安装依赖包
-
-`Gaia-server`依赖于以下第三方库，请确保系统中已安装这些依赖：
-
-- **Cairo**：用于 2D 图形渲染，版本号：`1.15.12`
-- **librsvg**：用于 SVG 图像处理，版本号：`2.40.20`<br>
-
-**在 Linux 系统上安装依赖**
-
-```cpp
-yum install cairo cairo-devel librsvg2 librsvg2-devel
-```
-
-### 3. 集成 Gaia-server 到项目中
-
-将`Gaia-server`的静态库和头文件集成到项目中，并在编译时链接到相关库。<br>
-
-**示例：使用 CMake 集成**
-
-```cmake
-# 设置 Gaia-server 的头文件路径
-include_directories(/path/to/project/include)
-
-# 设置 Gaia-server 的静态库路径
-link_directories(/path/to/project/lib)
-
-# 链接 Gaia-server 静态库和依赖库
-target_link_libraries(target_name gaia-server cairo librsvg-2.0)
-```
-
-### 4. 使用示例
-
-```cpp
-// 以下头文件来自 Gaia-server
-#include "include/Gaia.h"
-#include "include/Util.d"
-
-int main(){
-  // 入参
-  int level; // 渲染层级：1、2或3
-  int gaiaId;
-  std::vector<int> indexList; // 默认当前层级全部瓦片图
-  bool isSingleCore = false; // 默认开启多核渲染
-
-  Gaia &gaia=Gaia::getInstance(gaiaId);
-
-  // 添加rect对象
-  gaia.addRect('rect1', 10, 15, 80, 80);
-
-  // 添加path对象
-  gaia.addPath('path1', 0, 0, 15, 10);
-  // 添加text对象
-  gaia.addText('text1', 'Text information', 12, 25);
-  // 添加image对象
-  gaia.addImage('image1', 5, 10, 'iVBORw0KGgoAAAANSUhEUgA...');
-  // 添加SVG对象
-  gaia.addSvg('svg1', 30, 25, 100, 100, 'AND2');
-  // 若添加SVG对象，需要引入SVG文件的路径
-  GSvg::svgPath = "/path/to/symbol.svg"
-
-  // 调用渲染方法，返回瓦片图的base64字符串，需要通过客户端渲染引擎拼接后展示渲染结果
-  RenderResult result;
-  if (isSingleCore) {
-    // 单核
-    result = gaia.renderWithSingleCore(level, indexList);
-  } else {
-    // 多核
-    result = gaia.renderWithMultiCore(level, indexList);
-  }
-
-  // render方法可直接展示结果，方便用户查看
-  std::string fileName = "imageTest";
-  gaia.render(fileName);
-
-}
-```
-
-## 客户端渲染引擎
-
-### 1. 下载 Gaia-client 安装包
-
-使用npm安装客户端渲染引擎，请确保系统中已安装node.js环境。
-
-```
-npm install gaia-client
-```
-
-或者直接下载release页面，下载`gaia-client.tar.gz`压缩包，解压后将`dist`文件夹拷贝到项目中。安装包，解压后将`dist`文件夹拷贝到项目中即可。
-
-
-### 创建组件
+## 创建组件
 
 ```js
 <Gaia
@@ -145,12 +36,12 @@ tileData所需要的格式如下：
 ```
 blockBase64Str表示瓦片的base64编码，index表示瓦片的索引，例如这是一个2*2的瓦片图，index分别为0,1,2,3
 
-![瓦片图2x2](../images/client/瓦片图2x2.jpg)
+![瓦片图2x2](./images/瓦片图2x2.jpg)
 
 
 完成上述基本工作以后，我们能够在页面上渲染出一个2x2的瓦片图。当然上述只是最基本的用法，Gaia还提供了更多的功能，比如分辨率切换、增量更新、自定义事件回调等等，用于满足更复杂的场景需求。
 
-### 瓦片图的分辨率切换
+## 瓦片图的分辨率切换
 以下是一个更复杂的场景，我们希望在初始渲染一个2x2的瓦片图，当我们缩放到一定的数量级后，我们希望去渲染一个8x8，甚至是32x32的瓦片图，这样可以更加清晰地展示图片内容。  
 
 
@@ -185,21 +76,7 @@ const handlewheel = (event: TileMapEventInfo) => {
 tileSwitchLevel属性表示当缩放到多少级时，才会触发分辨率切换，这里我们设置成4级。
 tilesNumPerResolution属性表示不同分辨率下的瓦片数量，这里我们设置成2x2、8x8、32x32。当用户缩放到4级时，瓦片图会渲染8x8的图片，同理缩小4级，瓦片图会渲染2x2的图片。
 
-![levelChange](../images/client/levelchange.gif)
-
-### 增量更新
-由于Gaiaclinet的瓦片更新机制是增量更新，因此我们仅仅传入可视区域的瓦片，而不用重新请求全部瓦片数据，从而提高性能。
-```js
-const handlewheel = (event: TileMapEventInfo) => {
-  fetchData(
-    event.visibleIndexList,
-    event.curResolution
-  );
-};
-```
-TileMapEventInfo对象中提供的visibleIndexList属性，表示当前可视区域的瓦片索引列表，curResolution属性表示当前的分辨率等级，通过这两个属性，我们可以仅仅请求可视区域的瓦片数据，从而提高性能。例如当前可视区域的瓦片索引列表为[0，1]，当前的分辨率等级为0，也就是2x2的瓦片图，我们仅仅需要更新瓦片图为2x2索引为0,1的瓦片数据，而不用更新其余的瓦片数据,当然如果是遇到重复的数据更新，需要用户自己做好处理，防止不必要的数据请求。
-
-
+![levelChange](./images/levelchange.gif)
 
 
 
