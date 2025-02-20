@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as r}from"./chunks/framework.Dx5c5edu.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"client/api_reference.md","filePath":"client/api_reference.md"}'),a={name:"client/api_reference.md"};function c(n,i,o,s,p,_){return r(),t("div")}const l=e(a,[["render",c]]);export{d as __pageData,l as default};
