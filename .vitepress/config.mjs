@@ -129,8 +129,11 @@ export default defineConfig({
               collapsible: true,
               collapsed: false,
               items: [
-                // { text: 'Overview', link: '' },
-                // { text: 'Usage scenarios', link: '' },
+                { text: "Use Cases", link: "/en/guide/client-use-cases" },
+                {
+                  text: "Problem Solved",
+                  link: "/en/guide/client-problem-solved",
+                },
               ],
             },
           ],
